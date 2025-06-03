@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Контакты</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Наши контакты</h5>
+                    <p class="card-text">
+                        <strong>Адрес:</strong><br>
+                        г. Москва, ул. Примерная, д. 123<br><br>
+                        
+                        <strong>Телефон:</strong><br>
+                        +7 (999) 123-45-67<br><br>
+                        
+                        <strong>Email:</strong><br>
+                        info@estate-agency.ru<br><br>
+                        
+                        <strong>Режим работы:</strong><br>
+                        Пн-Пт: 9:00 - 18:00<br>
+                        Сб-Вс: 10:00 - 16:00
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Напишите нам</h5>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_name" class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control {% if form.name.errors %}is-invalid{% endif %}" 
+                                   id="id_name" name="name" value="{{ form.name.value|default:'' }}" required>
+                            {% if form.name.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.name.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Email</label>
+                            <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" 
+                                   id="id_email" name="email" value="{{ form.email.value|default:'' }}" required>
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_message" class="form-label">Сообщение</label>
+                            <textarea class="form-control {% if form.message.errors %}is-invalid{% endif %}" 
+                                      id="id_message" name="message" rows="5" required>{{ form.message.value|default:'' }}</textarea>
+                            {% if form.message.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.message.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Как нас найти</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.7724813780166!2d37.618423!3d55.755819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIwLjkiTiAzN8KwMzcnMDYuMyJF!5e0!3m2!1sru!2sru!4v1620000000000!5m2!1sru!2sru" 
+                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

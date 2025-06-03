@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Статистика продаж{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4">Статистика продаж</h1>
+
+    {% if user.is_authenticated and user.is_superuser %}
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-currency-dollar"></i>Сумма продаж
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">Общая стоимость</h5>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">
+                              <strong>Среднее:</strong> {{ cost_stats.mean_cost|floatformat:2 }} $
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Медиана:</strong> {{ cost_stats.median_cost|floatformat:2 }} $
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Мода:</strong> {{ cost_stats.mode_cost|floatformat:2 }} $
+                            </li>
+                        </ul>
+                        <h5 class="card-title text-muted">Сервисные сборы</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <strong>Среднее:</strong> {{ service_stats.mean_cost|floatformat:2 }} $
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Медиана:</strong> {{ service_stats.median_cost|floatformat:2 }} $
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Мода:</strong> {{ service_stats.mode_cost|floatformat:2 }} $
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-person"></i>Возраст клиентов
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <strong>Средний возраст:</strong> {{ client_stats.mean_age|floatformat:1 }}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Медиана возраста:</strong> {{ client_stats.median_age|floatformat:1 }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-house"></i>Популярный тип недвижимости
+                    </div>
+                    <img src="{{ chart_images.services_by_sold_count }}" class="card-img-top">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <strong>Категория:</strong> {{ popular_category|default:"Нет данных" }}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Продажи:</strong> {{ popular_category.count }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-cash-stack"></i>Сервисная прибыль
+                    </div>
+                    <img src="{{ chart_images.services_by_service_profit }}" class="card-img-top">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <strong>Категория:</strong> {{ profitable_service|default:"Нет данных" }}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Сумма:</strong> {{ profitable_service.total_service_cost|floatformat:2 }} $
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-person-workspace"></i>Сотрудники: Стоимость услуг (последний месяц)
+                    </div>
+                    <img src="{{ chart_images.employee_service_stats }}" class="card-img-top">
+                    <div class="card-body">
+                        {% for emp in employee_service_stats %}
+                            <p class="mb-2">
+                              <strong>{{ emp.user.get_full_name }}:</strong>
+                              {{ emp.total_service_cost|floatformat:2|default:"Нет данных" }} $
+                            </p>
+                        {% empty %}
+                            <p class="text-muted">Нет данных за последний месяц</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-wallet2"></i>Сотрудники: Общая стоимость (последний месяц)
+                    </div>
+                    <img src="{{ chart_images.employee_total_stats }}" class="card-img-top">
+                    <div class="card-body">
+                        {% for emp in employee_total_stats %}
+                            <p class="mb-2">
+                              <strong>{{ emp.user.get_full_name }}:</strong>
+                              {{ emp.total_cost|floatformat:2|default:"Нет данных" }} $
+                            </p>
+                        {% empty %}
+                            <p class="text-muted">Нет данных за последний месяц</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-trophy"></i>Наибольшая общая стоимость
+                    </div>
+                    <img src="{{ chart_images.services_by_full_costs }}" class="card-img-top">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <strong>Категория:</strong> {{ highest_cost_service|default:"Нет данных" }}
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Сумма:</strong> {{ highest_cost_service.total_value|floatformat:2 }} $
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-primary mt-4" role="alert">
+            <i class="bi bi-lock-fill me-2"></i>Доступ к статистике ограничен.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

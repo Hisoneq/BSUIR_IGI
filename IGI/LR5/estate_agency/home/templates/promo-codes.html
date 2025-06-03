@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Промокоды и акции{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <ul class="nav nav-tabs" id="promoTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="active-tab" data-bs-toggle="tab" 
+                        data-bs-target="#active" type="button" role="tab" 
+                        aria-controls="active" aria-selected="true">
+                    Активные промокоды
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="archive-tab" data-bs-toggle="tab" 
+                        data-bs-target="#archive" type="button" role="tab" 
+                        aria-controls="archive" aria-selected="false">
+                    Архивные промокоды
+                </button>
+            </li>
+        </ul>
+        
+        <div class="tab-content p-3 border border-top-0 rounded-bottom">
+            <div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="active-tab">
+                <div class="row">
+                    {% for promo in active_promos %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    {{ promo.code }}
+                                    <span class="badge bg-light float-end text-primary">
+                                        Скидка {{ promo.discount }}%
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ promo.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="col-12">
+                            <div class="alert alert-info">
+                                В данный момент нет активных промокодов
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="archive-tab">
+                <div class="row">
+                    {% for promo in archived_promos %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-secondary">
+                                <div class="card-header bg-secondary text-white">
+                                    {{ promo.code }}
+                                    <span class="badge bg-light text-secondary float-end">
+                                        Скидка {{ promo.discount }}%
+                                    </span>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ promo.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="col-12">
+                            <div class="alert alert-info">
+                                Нет архивных промокодов
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

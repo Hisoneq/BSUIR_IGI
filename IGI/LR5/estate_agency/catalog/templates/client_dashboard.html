@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет клиента{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Личный кабинет клиента</h1>
+
+    <div class="row">
+        <!-- Заявки на покупку -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Мои заявки на покупку</h5>
+                </div>
+                <div class="card-body">
+                    {% if requests %}
+                        {% for request in requests %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        Статус: {{ request.get_status_display }}
+                                    </h6>
+                                    <p class="card-text">
+                                        Объект: {{ request.estate.address }}<br>
+                                        Стоимость: {{ request.estate.cost }} руб.<br>
+                                        Сообщение: {{ request.message }}
+                                    </p>
+                                    {% if request.status == 'new' or request.status == 'in_progress' %}
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="request_id" value="{{ request.id }}">
+                                            <button type="submit" name="action" value="buy" class="btn btn-success">
+                                                Купить
+                                            </button>
+                                            <button type="submit" name="action" value="cancel" class="btn btn-danger">
+                                                Отменить
+                                            </button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted">У вас пока нет заявок на покупку.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Купленные объекты -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Купленные объекты</h5>
+                </div>
+                <div class="card-body">
+                    {% if sales %}
+                        {% for sale in sales %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        Дата покупки: {{ sale.created_at|date:"d.m.Y" }}
+                                    </h6>
+                                    <p class="card-text">
+                                        Объект: {{ sale.estate.address }}<br>
+                                        Стоимость: {{ sale.estate.cost }} руб.<br>
+                                        Менеджер: {{ sale.employee.user.username }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted">У вас пока нет купленных объектов.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

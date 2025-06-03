@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Часто задаваемые вопросы{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Часто задаваемые вопросы</h1>
+
+<div class="accordion" id="faqAccordion">
+    {% for faq in faq_list %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" 
+                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" 
+                        aria-controls="collapse{{ forloop.counter }}">
+                    {{ faq.question }}
+                </button>
+            </h2>
+            <div id="collapse{{ forloop.counter }}" 
+                 class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" 
+                 aria-labelledby="heading{{ forloop.counter }}" 
+                 data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    {{ faq.answer|linebreaks }}
+                    <div class="text-muted mt-2">
+                        Добавлено: {{ faq.added_date|date:"d.m.Y" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                Вопросов пока нет
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

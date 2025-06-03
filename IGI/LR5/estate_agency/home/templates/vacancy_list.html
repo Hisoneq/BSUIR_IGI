@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Вакансии{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Вакансии в нашей компании</h1>
+
+<div class="row">
+    {% for vacancy in vacancy_list %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header" style="background-color: #699BCE; color: #ffffff;">
+                    <h5 class="mb-0">{{ vacancy.position }}</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        Зарплата: {{ vacancy.salary }}
+                    </h6>
+                    <div class="card-text mb-3">
+                        {{ vacancy.description|linebreaks }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                В данный момент открытых вакансий нет
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

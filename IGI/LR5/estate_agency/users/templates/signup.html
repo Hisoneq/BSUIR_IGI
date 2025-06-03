@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Регистрация</h1>
+<div class="card">
+    <div class="card-body">
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Имя пользователя</label>
+                <input type="text" class="form-control {% if form.username.errors %}is-invalid{% endif %}"
+                       id="id_username" name="username" value="{{ form.username.value|default:'' }}" required>
+                {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_first_name" class="form-label">Имя</label>
+                <input type="text" class="form-control {% if form.first_name.errors %}is-invalid{% endif %}"
+                       id="id_first_name" name="first_name" value="{{ form.first_name.value|default:'' }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_last_name" class="form-label">Фамилия</label>
+                <input type="text" class="form-control {% if form.last_name.errors %}is-invalid{% endif %}"
+                       id="id_last_name" name="last_name" value="{{ form.last_name.value|default:'' }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_email" class="form-label">Электронная почта</label>
+                <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}"
+                       id="id_email" name="email" value="{{ form.email.value|default:'' }}">
+            </div>
+            <div class="mb-3">
+                <label for="id_phone_number" class="form-label">Номер телефона</label>
+                <input type="text" class="form-control {% if form.phone_number.errors %}is-invalid{% endif %}"
+                       id="id_phone_number" name="phone_number" value="{{ form.phone_number.value|default:'' }}"
+                       placeholder="+375(29)XXX-XX-XX" required pattern="\+375\(29\)\d{3}-\d{2}-\d{2}">
+            </div>
+            <div class="mb-3">
+                <label for="id_birth_date" class="form-label">Дата рождения</label>
+                <input type="date" class="form-control {% if form.birth_date.errors %}is-invalid{% endif %}"
+                       id="id_birth_date" name="birth_date" value="{{ form.birth_date.value|default:'' }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_password1" class="form-label">Пароль</label>
+                <input type="password" class="form-control {% if form.password1.errors %}is-invalid{% endif %}"
+                       id="id_password1" name="password1" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_password2" class="form-label">Подтверждение пароля</label>
+                <input type="password" class="form-control {% if form.password2.errors %}is-invalid{% endif %}"
+                       id="id_password2" name="password2" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

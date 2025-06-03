@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Вход</h1>
+<div class="card">
+    <div class="card-body">
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <form method="post" action="{% url 'users:login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Имя пользователя</label>
+                <input type="text" class="form-control {% if form.username.errors %}is-invalid{% endif %}" id="id_username" name="username" value="{{ form.username.value|default:'' }}" required>
+                {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_password" class="form-label">Пароль</label>
+                <input type="password" class="form-control {% if form.password.errors %}is-invalid{% endif %}" id="id_password" name="password" required>
+                {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Войти</button>
+            <a href="{% url 'users:signup' %}" class="btn btn-secondary">Зарегистрироваться</a>
+            <input type="hidden" name="next" value="{{ next|default:'/home/' }}">
+        </form>
+    </div>
+</div>
+{% endblock %}

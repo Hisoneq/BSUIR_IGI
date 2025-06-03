@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="mb-4">{{ estate.address }}</h1>
+            
+            <div class="mb-4">
+                <img src="{{ estate.get_image_url }}"
+                     class="img-fluid rounded" 
+                     alt="{{ estate.address }}">
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Карта</h5>
+                    <img src="{{ map_image_url }}"
+                         class="img-fluid rounded"
+                         alt="Карта для {{ estate.address }}">
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Характеристики</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Цена:</strong> {{ estate.cost }} $
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Площадь:</strong> {{ estate.area }} м²
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Категория:</strong> {{ estate.category }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Описание</h5>
+                    <p class="card-text">{{ estate.description }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% if user.client %}
+        <div class="col-lg-4">
+            <div class="card sticky-top" style="top: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title">Оставить заявку</h5>
+                    {% if request_exists %}
+                        <div class="alert alert-info">
+                            Вы уже отправили заявку на это объявление.
+                        </div>
+                    {% else %}
+                        {% if form.errors %}
+                            <div class="alert alert-danger">
+                                <ul>
+                                    {% for field, errors in form.errors.items %}
+                                        {% for error in errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                        <form method="post" action="{% url 'create_request' estate.pk %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary w-100 mt-3">
+                                Отправить заявку
+                            </button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<div class="alert alert-info mt-2">
+    Чтобы просмотреть страницу, пожалуйста, <a href="{% url 'login' %}">войдите</a> или <a href="{% url 'signup' %}">зарегистрируйтесь</a>.
+</div>
+{% endif %}
+{% endblock %}

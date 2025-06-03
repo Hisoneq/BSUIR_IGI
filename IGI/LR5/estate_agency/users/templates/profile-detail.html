@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+<h1>Профиль пользователя: {{ profile.user.username }}</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Информация о пользователе</h5>
+        {% if is_client %}
+            <p>Клиент</p>
+        {% elif is_employee %}
+            <p>Сотрудник</p>
+        {% endif %}
+        <p><strong>Имя пользователя:</strong> {{ profile.user.username }}</p>
+        <p><strong>Имя:</strong> {{ profile.user.first_name }}</p>
+        <p><strong>Фамилия:</strong> {{ profile.user.last_name }}</p>
+        <p><strong>Email:</strong> {{ profile.user.email }}</p>
+        <p><strong>Телефон:</strong> {{ profile.user.phone_number }}</p>
+        <p><strong>Дата рождения:</strong> {{ profile.user.birth_date|date:"d/m/Y" }}</p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Время и дата</h5>
+        <p><strong>Текущая дата ({{ user_timezone }}):</strong> {{ local_date }} ({{ utc_date }} UTC)</p>
+        <p><strong>Дата регистрации ({{ user_timezone }}):</strong> {{ local_created }} ({{ utc_created }} UTC)</p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Календарь</h4>
+    </div>
+    <div class="card-body">
+        <pre>{{ calendar }}</pre>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Отзывы</h5>
+        {% if reviews %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Текст</th>
+                    <th>Оценка</th>
+                    <th>Создано (Таймзона пользователя)</th>
+                    <th>Обновлено (Таймзона пользователя)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in reviews %}
+                <tr>
+                    <td>{{ item.review.text|truncatewords:5 }}</td>
+                    <td>{{ item.review.rating }}★</td>
+                    <td>{{ item.created_local }} ({{ item.created_utc }} UTC)</td>
+                    <td>{{ item.updated_local }} ({{ item.updated_utc }} UTC)</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted">Нет отзывов.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

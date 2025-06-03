@@ -1,0 +1,618 @@
+logs))2025-06-03 12:08:15,724 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:08:19,915 ERROR log Internal Server Error: /home/about/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/list.py", line 45, in get_queryset
+    queryset = queryset.order_by(*ordering)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1718, in order_by
+    obj.query.add_ordering(*field_names)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 2288, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1802, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'created_at' into field. Choices are: created, id, image, summary, title
+2025-06-03 12:08:47,070 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/estate_agency/settings.py changed, reloading.
+2025-06-03 12:08:47,334 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:09:04,934 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:09:05,187 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:09:11,397 ERROR log Internal Server Error: /home/about/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home/about.html, home/news_list.html
+2025-06-03 12:09:13,654 WARNING log Not Found: /apple-touch-icon.png
+2025-06-03 12:09:13,655 WARNING log Not Found: /apple-touch-icon-precomposed.png
+2025-06-03 12:09:13,656 WARNING log Not Found: /favicon.ico
+2025-06-03 12:09:22,902 ERROR log Internal Server Error: /home/about/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home/about.html, home/news_list.html
+2025-06-03 12:10:07,645 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:10:07,910 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:10:09,249 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:10:09,477 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:10:24,064 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/estate_agency/settings.py changed, reloading.
+2025-06-03 12:10:24,365 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:10:25,720 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/estate_agency/settings.py changed, reloading.
+2025-06-03 12:10:25,939 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:10:38,589 ERROR log Internal Server Error: /home/news/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1610, in execute_sql
+    sql, params = self.as_sql()
+                  ~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 766, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+                                       ~~~~~~~~~~~~~~~~~~^
+        with_col_aliases=with_col_aliases or bool(combinator),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 85, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 74, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+                                                            ~~~~~~~~~~~~~~~^
+        with_col_aliases=with_col_aliases,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 299, in get_select
+    related_klass_infos = self.get_related_selections(select, select_mask)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1396, in get_related_selections
+    raise FieldError(
+    ...<6 lines>...
+    )
+django.core.exceptions.FieldError: Invalid field name(s) given in select_related: 'user'. Choices are: (none)
+2025-06-03 12:11:17,026 ERROR log Internal Server Error: /home/news/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1610, in execute_sql
+    sql, params = self.as_sql()
+                  ~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 766, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+                                       ~~~~~~~~~~~~~~~~~~^
+        with_col_aliases=with_col_aliases or bool(combinator),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 85, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 74, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+                                                            ~~~~~~~~~~~~~~~^
+        with_col_aliases=with_col_aliases,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 299, in get_select
+    related_klass_infos = self.get_related_selections(select, select_mask)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1396, in get_related_selections
+    raise FieldError(
+    ...<6 lines>...
+    )
+django.core.exceptions.FieldError: Invalid field name(s) given in select_related: 'user'. Choices are: (none)
+2025-06-03 12:11:25,129 ERROR log Internal Server Error: /home/news/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1610, in execute_sql
+    sql, params = self.as_sql()
+                  ~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 766, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+                                       ~~~~~~~~~~~~~~~~~~^
+        with_col_aliases=with_col_aliases or bool(combinator),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 85, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 74, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+                                                            ~~~~~~~~~~~~~~~^
+        with_col_aliases=with_col_aliases,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 299, in get_select
+    related_klass_infos = self.get_related_selections(select, select_mask)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1396, in get_related_selections
+    raise FieldError(
+    ...<6 lines>...
+    )
+django.core.exceptions.FieldError: Invalid field name(s) given in select_related: 'user'. Choices are: (none)
+2025-06-03 12:11:47,886 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:11:48,143 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:11:49,494 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:11:49,708 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:11:59,158 ERROR log Internal Server Error: /home/services/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: services.html, home/news_list.html
+2025-06-03 12:12:45,339 ERROR log Internal Server Error: /home/reviews/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py", line 97, in get_queryset
+    return super().get_queryset().order_by('-created')
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1718, in order_by
+    obj.query.add_ordering(*field_names)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 2288, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1802, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'created' into field. Choices are: created_at, id, rating, text, updated_at, user, user_id
+2025-06-03 12:13:02,437 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:13:02,699 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:13:04,047 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:13:04,265 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:13:09,665 ERROR log Internal Server Error: /home/reviews/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py", line 153, in get_queryset
+    return super().get_queryset().select_related('user').order_by('-created_at')
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py", line 97, in get_queryset
+    return super().get_queryset().order_by('-created')
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1718, in order_by
+    obj.query.add_ordering(*field_names)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 2288, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1802, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'created' into field. Choices are: created_at, id, rating, text, updated_at, user, user_id
+2025-06-03 12:13:10,524 ERROR log Internal Server Error: /home/reviews/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py", line 153, in get_queryset
+    return super().get_queryset().select_related('user').order_by('-created_at')
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py", line 97, in get_queryset
+    return super().get_queryset().order_by('-created')
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1718, in order_by
+    obj.query.add_ordering(*field_names)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 2288, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1802, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'created' into field. Choices are: created_at, id, rating, text, updated_at, user, user_id
+2025-06-03 12:13:22,989 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:13:23,225 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:13:24,573 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:13:24,810 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:13:31,036 ERROR log Internal Server Error: /home/reviews/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+2025-06-03 12:15:20,407 ERROR log Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+2025-06-03 12:15:45,872 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/estate_agency/settings.py changed, reloading.
+2025-06-03 12:15:46,205 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:16:39,410 ERROR log Internal Server Error: /home/contact/
+Traceback (most recent call last):
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contact.html, home/news_list.html
+2025-06-03 12:18:28,637 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:18:28,957 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:18:30,353 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/views.py changed, reloading.
+2025-06-03 12:18:30,561 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:18:52,218 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/urls.py changed, reloading.
+2025-06-03 12:18:52,477 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:18:59,710 WARNING log Not Found: /media/news/home_gZAEmeD.jpeg
+2025-06-03 12:18:59,714 WARNING log Not Found: /media/news/home_w6eKXbG.jpeg
+2025-06-03 12:18:59,717 WARNING log Not Found: /media/news/home_yNgzD8J.jpeg
+2025-06-03 12:18:59,719 WARNING log Not Found: /media/news/home_487ETuQ.jpeg
+2025-06-03 12:18:59,722 WARNING log Not Found: /media/news/home_h5JILUH.jpeg
+2025-06-03 12:18:59,724 WARNING log Not Found: /media/news/home_lFDtRCw.jpeg
+2025-06-03 12:18:59,727 WARNING log Not Found: /media/news/home_RXcEiYq.jpeg
+2025-06-03 12:19:04,325 WARNING log Not Found: /media/news/home_RXcEiYq.jpeg
+2025-06-03 12:19:04,331 WARNING log Not Found: /media/news/home_gZAEmeD.jpeg
+2025-06-03 12:19:04,334 WARNING log Not Found: /media/news/home_lFDtRCw.jpeg
+2025-06-03 12:19:04,337 WARNING log Not Found: /media/news/home_487ETuQ.jpeg
+2025-06-03 12:19:04,340 WARNING log Not Found: /media/news/home_yNgzD8J.jpeg
+2025-06-03 12:19:04,342 WARNING log Not Found: /media/news/home_h5JILUH.jpeg
+2025-06-03 12:19:04,344 WARNING log Not Found: /media/news/home_w6eKXbG.jpeg
+2025-06-03 12:19:28,544 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/forms.py changed, reloading.
+2025-06-03 12:19:28,832 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:19:41,359 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/forms.py changed, reloading.
+2025-06-03 12:19:41,599 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:19:51,064 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/forms.py changed, reloading.
+2025-06-03 12:19:51,315 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:20:29,249 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/models.py changed, reloading.
+2025-06-03 12:20:29,644 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:21:34,120 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/home/admin.py changed, reloading.
+2025-06-03 12:21:34,459 INFO autoreload Watching for file changes with StatReloader
+2025-06-03 12:22:10,530 INFO autoreload /Users/romamironovic/Desktop/LR5-REMASTERED/real_estate_agency/venv/lib/python3.13/site-packages/django/contrib/auth/forms.py changed, reloading.
+2025-06-03 12:22:11,246 INFO autoreload Watching for file changes with StatReloader

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mb-4">Последняя новость</h1>
+        <div class="card mb-4">
+            {% if last_news %}
+                <div class="card-footer text-muted">
+                    {{ last_news.created|date:"d.m.Y" }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ last_news.title }}</h5>
+                    <p class="card-text">{{ last_news.summary }}</p>
+                    <p class="card-text">{{ last_news.create }}</p>
+                    <a href="" class="btn btn-secondary">Читать далее</a>
+                </div>
+            {% else %}
+                <div class="card-body">
+                    <p>Новостей пока нет</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
